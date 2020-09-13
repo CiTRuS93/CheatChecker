@@ -35,7 +35,7 @@ for w in rvector:
     else:
         l2.append(0)
 c = 0
-
+#this is or issue
 # cosine formula
 for i in range(len(rvector)):
     c += l1[i]*l2[i]
