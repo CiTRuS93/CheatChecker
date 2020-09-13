@@ -3,12 +3,12 @@
 # two sentences using cosine similarity.
 #from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
-
+import pandas
 # X = input("Enter first string: ").lower()
 # Y = input("Enter second string: ").lower()
 X = "ניב הקטן הלך למכולת בשביל לקנות קורנפלקס"
 Y = "הדר התותח יצא למכולת בכדי לקנות חלב"
-
+dataset=pandas.read_csv('data\בדיקה-tst exam-תגובות.csv')
 # tokenization
 X_list = word_tokenize(X)
 Y_list = word_tokenize(Y)
