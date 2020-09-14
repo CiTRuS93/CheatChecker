@@ -1,4 +1,5 @@
 from nltk.tokenize import word_tokenize
+from analyzerInertface import AnalyzerInterface
 import pandas
 
 class cosineStringAnalyzer(AnalyzerInterface):
@@ -12,18 +13,7 @@ class cosineStringAnalyzer(AnalyzerInterface):
         self.df = dataset[colNames]
 
 
-    def analyze_data(self):
-        df = pandas.DataFrame(columns = self.df.columns) 
-        for i, row in self.df.iterrows():
-            for j, row_2 in self.df.iterrows():
-                    if row[0]!=row_2[0] and j>i:
-                        new_row = []
-                        new_row.append(row[0]+' '+row_2[0])
-                        for k in range(1,len(row)):
-                            
-                            new_row.append(str_compare(row[k],row_2[k]))
-                        df = df.append(pandas.Series(new_row, index=self.df.columns ), ignore_index=True)
-        return df
+    
     def str_compare(self,X,Y):
         X_list = word_tokenize(X)
         Y_list = word_tokenize(Y)
@@ -56,3 +46,16 @@ class cosineStringAnalyzer(AnalyzerInterface):
             c += l1[i]*l2[i]
         cosine = c / float((sum(l1)*sum(l2))**0.5)
         return cosine
+
+    def analyze_data(self):
+        df = pandas.DataFrame(columns = self.df.columns) 
+        for i, row in self.df.iterrows():
+            for j, row_2 in self.df.iterrows():
+                    if row[0]!=row_2[0] and j>i:
+                        new_row = []
+                        new_row.append(row[0]+' && '+row_2[0])
+                        for k in range(1,len(row)):
+                            
+                            new_row.append(self.str_compare(row[k],row_2[k]))
+                        df = df.append(pandas.Series(new_row, index=self.df.columns ), ignore_index=True)
+        return df
