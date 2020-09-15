@@ -5,7 +5,8 @@ __pycache__/
 
 # C extensions
 *.so
-
+hewiki-latest-pages-articles.xml.bz2
+wiki.he.text
 # Distribution / packaging
 .Python
 build/
@@ -129,3 +130,10 @@ dmypy.json
 .pyre/
 
 .vscode
+CheatChecker/project/wiki-he/wiki.he.vec
+CheatChecker/project/wiki-he/wiki.he.bin
+CheatChecker/project/bert-model/vocab.txt
+CheatChecker/project/bert-model/bert_model.ckpt.meta
+CheatChecker/project/bert-model/bert_model.ckpt.index
+CheatChecker/project/bert-model/bert_model.ckpt.data-00000-of-00001
+CheatChecker/project/bert-model/bert_config.json
