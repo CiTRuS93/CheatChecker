@@ -16,6 +16,7 @@ https://github.com/hanxiao/bert-as-service#1-download-a-pre-trained-bert-model
 export moodle answers:
 in the moodle system export the students responses from the quiz:
 In the quiz, Navigation block -> ... -> Quiz name -> Results -> Responses.
+![Alt text](./image.png?raw=true "Title")
 
 change the file pass in CheatChecker concept notebook to the new file.
 
